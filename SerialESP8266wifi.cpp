@@ -271,7 +271,7 @@ bool SerialESP8266wifi::connectToServer(){
     writeCommand(COMMA_1);
     _serialOut -> println(_port);
 
-    flags.connectedToServer = (readCommand(10000, LINKED, ALREADY) > 0);
+    flags.connectedToServer = (readCommand(10000, OK, ALREADY) > 0);
 
     if(flags.connectedToServer)
         serverRetries = 0;
